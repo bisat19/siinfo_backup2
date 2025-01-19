@@ -3,20 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use App\Models\Pengaduan;
 
 class PengaduanController extends Controller
 {
-    // Menampilkan halaman riwayat pengaduan
     public function index()
     {
-        $pengaduans = Pengaduan::all(); // Mengambil semua data pengaduan dari database
-        return view('pengaduan.index', compact('pengaduans'));
+        return view('dashboard.pengaduan.index');
     }
 
-    // Menampilkan form pengaduan
-    public function create()
+    public function form()
     {
-        return view('pengaduan.form');
+        return view('dashboard.pengaduan.form');
     }
+
+    // public function store(Request $request)
+    // {
+    //     return redirect()->route('dashboard.pengaduan.index');
+    // }
 }

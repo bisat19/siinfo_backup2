@@ -7,7 +7,7 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <form action="{{ route('pengaduan.store') }}" method="POST" enctype="multipart/form-data">
+    <!-- <form action="{{ route('pengaduan.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="jenis_pengaduan">Jenis Pengaduan</label>
@@ -27,6 +27,6 @@
             <input type="file" id="file" name="file" class="form-control-file">
         </div>
         <button type="submit" class="btn btn-success">Submit</button>
-    </form>
+    </form> -->
 </div>
 @endsection
