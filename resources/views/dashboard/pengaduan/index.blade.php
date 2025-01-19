@@ -8,7 +8,7 @@
 <body>
     <div class="container mt-5">
         <h1>Layanan Pengaduan</h1>
-        <a href="/pengaduan/create" class="btn btn-primary">Form Pengaduan</a>
+        <a href="{{ route('pengaduan.create') }}" class="btn btn-primary">Form Pengaduan</a>
         <table class="table mt-3">
             <thead>
                 <tr>
