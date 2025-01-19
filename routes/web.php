@@ -16,6 +16,7 @@ use App\Http\Controllers\PassphraseController;
 use App\Http\Controllers\AdminBidangController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\PostDashboardController;
+use App\Http\Controllers\PengaduanController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/', function () {
@@ -99,6 +100,13 @@ Route::middleware(['auth', IsUser::class])->group(function () {
         Route::put('/{passphrase}/update', [PassphraseController::class, 'update'])->name('passphrase.update');
         Route::get('/{passphrase}/edit', [PassphraseController::class, 'edit'])->name('passphrase.edit');
     });
+
+    //Route untuk Pengaduan
+    Route::prefix('dashboard/pengaduan')->group(function () {
+        Route::get('/', [PengaduanController::class, 'index'])->name('pengaduan.index');
+        Route::get('/form', [PengaduanController::class, 'form'])->name('pengaduan.form');
+    });
+        
 });
 
 Route::middleware(['auth', IsAdmin::class])->group(function (){
