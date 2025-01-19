@@ -42,9 +42,17 @@
           </li>
           <li class="nav-item">
             <a class="nav-link d-flex align-items-center gap-2" 
-            aria-current="page" href="/dashboard/pengaduan">
+            aria-current="page" href="/dashboard/pengaduan/form_pengaduan">
               <svg class="bi"><use xlink:href="#puzzle"/></svg>
               Pengaduan
+            </a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2" 
+            aria-current="page" href="/dashboard/pengaduan/riwayat">
+              <svg class="bi"><use xlink:href="#puzzle"/></svg>
+              Riwayat Pengaduan
             </a>
           </li>
           <li class="nav-item dropdown-submenu">

@@ -1,107 +1,155 @@
-<html>
+<html lang="en">
 <head>
-    <title>Form Pengaduan</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SI-INFO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1E3A8A;
-            color: white;
+            background-color: #f3f4f6;
             margin: 0;
             padding: 0;
+        }
+        .flex {
             display: flex;
-            justify-content: center;
-            align-items: center;
+        }
+        .sidebar {
+            width: 16rem;
+            background-color: #2d3748;
+            color: white;
             height: 100vh;
+            padding: 1rem;
         }
-        .container {
-            background-color: #374151;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 400px;
-        }
-        .container h1 {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
+        .sidebar .title {
+            font-size: 1.5rem;
             font-weight: bold;
         }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .sidebar nav a {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1.5rem;
+            color: #a0aec0;
+            text-decoration: none;
         }
-        .form-group textarea {
-            resize: vertical;
-        }
-        .form-group input[type="file"] {
-            padding: 3px;
-        }
-        .form-group button {
-            background-color: #2563EB; /* Biru terang */
+        .sidebar nav a:hover {
             color: white;
+        }
+        .sidebar nav .section-title {
+            padding: 0.5rem 1.5rem;
+            color: #a0aec0;
+            margin-top: 1.5rem;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1a202c;
+            color: white;
+            padding: 1rem;
+        }
+        .header a {
+            color: white;
+            text-decoration: none;
+        }
+        .content {
+            padding: 1.5rem;
+        }
+        .content h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .form-container {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        .form-container .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-container label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .form-container select,
+        .form-container textarea,
+        .form-container input[type="file"] {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 0.25rem;
+            background-color: #edf2f7;
+        }
+        .form-container button {
+            background-color: #3182ce;
+            color: white;
+            padding: 0.5rem 1rem;
             border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
+            border-radius: 0.25rem;
             cursor: pointer;
-            width: 100%;
-        }
-        .form-group button:hover {
-            background-color: #1D4ED8; /* Biru lebih gelap */
-        }
-        .error {
-            background-color: #EF4444; /* Merah */
-            color: white;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Form Pengaduan</h1>
-
-        <!-- Form Pengaduan -->
-        <form action="/pengaduan/store" method="POST" enctype="multipart/form-data">
-            <!-- Jenis Pengaduan -->
-            <div class="form-group">
-                <label for="jenis_pengaduan">Jenis Pengaduan:</label>
-                <select name="jenis_pengaduan" id="jenis_pengaduan" required>
-                    <option value="">Pilih jenis pengaduan</option>
-                    <option value="Pengaduan 1">Pengaduan 1</option>
-                    <option value="Pengaduan 2">Pengaduan 2</option>
-                    <option value="Pengaduan 3">Pengaduan 3</option>
-                </select>
-            </div>
-
-            <!-- Deskripsi -->
-            <div class="form-group">
-                <label for="deskripsi">Deskripsi:</label>
-                <textarea name="deskripsi" id="deskripsi" rows="4" required></textarea>
-            </div>
-
-            <!-- File Upload -->
-            <div class="form-group">
-                <label for="file">Gambar (opsional):</label>
-                <input type="file" name="file" id="file"/>
-            </div>
-
-            <!-- Submit Button -->
-            <div class="form-group">
-                <button type="submit">Submit</button>
-            </div>
-        </form>
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="title">SI-INFO</div>
+            <nav>
+                <a href="#"><i class="fas fa-home mr-3"></i>Dashboard</a>
+                <div class="section-title">USER</div>
+                <a href="#"><i class="fas fa-puzzle-piece mr-3"></i>Kunjungan</a>
+                <a href="#"><i class="fas fa-puzzle-piece mr-3"></i>Berita Kunjungan</a>
+                <a href="#"><i class="fas fa-puzzle-piece mr-3"></i>Pengaduan</a>
+                <a href="#"><i class="fas fa-puzzle-piece mr-3"></i>Layanan <i class="fas fa-chevron-down ml-auto"></i></a>
+            </nav>
+        </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="flex items-center">
+                    <i class="fas fa-search mr-4"></i>
+                </div>
+                <div>
+                    <a href="#">Logout</a>
+                </div>
+            </header>
+            <!-- Content -->
+            <main class="content">
+                <h1>Form Pengaduan</h1>
+                <form class="form-container">
+                    <div class="form-group">
+                        <label for="jenis-pengaduan">Jenis Pengaduan</label>
+                        <select id="jenis-pengaduan">
+                            <option>Pilih Jenis Pengaduan</option>
+                            <option>Pengaduan 1</option>
+                            <option>Pengaduan 2</option>
+                            <option>Pengaduan 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="deskripsi">Deskripsi</label>
+                        <textarea id="deskripsi" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="file-upload">Upload File</label>
+                        <input type="file" id="file-upload">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </main>
+        </div>
     </div>
 </body>
 </html>

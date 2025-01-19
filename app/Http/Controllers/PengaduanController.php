@@ -8,7 +8,7 @@ class PengaduanController extends Controller
 {
     public function create()
     {
-        return view('dashboard.layananpengaduan.form_pengaduan');
+        return view('dashboard.pengaduan.form_pengaduan');
     }
 
     public function store(Request $request)

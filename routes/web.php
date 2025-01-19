@@ -102,11 +102,11 @@ Route::middleware(['auth', IsUser::class])->group(function () {
     });
 
     //Route untuk Pengaduan
-    Route::prefix('dashboard/layananpengaduan')->group(function () {
+    Route::prefix('dashboard/pengaduan')->group(function () {
         Route::get('/form_pengaduan', [PengaduanController::class, 'create'])->name('pengaduan.form');
         Route::post('/store', [PengaduanController::class, 'store'])->name('pengaduan.store');
-    });
-        
+    });        
+    
 });
 
 Route::middleware(['auth', IsAdmin::class])->group(function (){
